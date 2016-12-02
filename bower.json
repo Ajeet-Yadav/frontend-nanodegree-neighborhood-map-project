@@ -1,0 +1,31 @@
+{
+  "name": "neighborhood-map-project",
+  "version": "1.0.0.0",
+  "homepage": "https://github.com/ajeet-yadav/frontend-nanodegree-neighborhood-map-project",
+  "authors": [
+    "ajeet-yadav"
+  ],
+  "description": "locally you can find cool things to do.",
+  "main": "app.js",
+  "keywords": [
+    "Google Maps API",
+    "Knockout.js framework",
+    "AJAX",
+    "Yelp API",
+    "Wikipedia API",
+    "Flikr API"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockoutjs": "~3.3.0",
+    "bootstrap": "~3.0.0",    
+    "fontawesome": "~4.3.0"
+  }
+}

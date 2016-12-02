@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map Project: Artistic buildings and Galleries </title>
+    <!-- Bower components below were minified into _bower.css -->
+    <!-- bower:css -->
+    <!--
+			<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+			<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+		-->
+    <!-- endbower -->
+    <link rel="stylesheet" href="src/css/g_bower.min.css" />
+    <link rel="stylesheet" href="src/css/g_offline-styles.min.css" />
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/offline.min.js"></script>
+</head>
+
+<body>
+    <form class="online" id="city-input-form" data-bind="submit: updateLatLng">
+        <div data-bind="visible: model.showCheckboxes">
+            <label>
+                <input id="art_gallery" type="checkbox" name="business-type" value="art_gallery" data-bind="checked: model.artCheckbox" /><span>art galleries</span>
+            </label>
+            <label>
+                <input id="museum" type="checkbox" name="business-type" value="museum" data-bind="checked: model.museumCheckbox" /><span>museums</span>
+            </label>
+        </div>
+        <input id="city-input" type="text" placeholder='"New York City, NY" or "10001"' />
+    </form>
+    <div id="map-canvas" data-bind="visible: model.showMap"></div>
+    <div class="online" id="business-list">
+        <form id="search-box" data-bind="visible: model.showFilterInputBox, submit: normalizeSearchTerm">
+            <input type="textarea" id="filter-input" placeholder="filter businesses" />
+            <p>press ENTER key when finished</p>
+        </form>
+        <ul id="filtered-businesses" data-bind="foreach: model.filteredArray">
+            <li>
+                <a data-bind="text: $data.title, click: $root.listClickCallback"></a>
+            </li>
+        </ul>
+        <ul id="art-galleries" data-bind="foreach: model.artMarkersArray, visible: model.artCheckbox">
+            <li>
+                <a data-bind="text: $data.title, click: $root.listClickCallback"></a>
+            </li>
+        </ul>
+        <ul id="museums" data-bind="foreach:  model.museumMarkersArray, visible: model.museumCheckbox">
+            <li>
+                <a data-bind="text: $data.title, click: $root.listClickCallback"></a>
+            </li>
+        </ul>
+    </div>
+    <!-- Bower components below were minified into _bower.js -->
+    <!-- bower:js -->
+    <!--
+			<script src="bower_components/knockoutjs/dist/knockout.js"></script>
+			<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		-->
+    <!-- endbower -->
+    <script src="src/js/g_bower.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <script src="src/js/g_infobox-icons-main.min.js"></script>
+</body>
+
+</html>
