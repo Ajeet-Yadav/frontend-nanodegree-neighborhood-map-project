@@ -1,5 +1,5 @@
 
-# NEIGHBORHOOD MAP PROJECT (Museums and Art Galleries)
+# NEIGHBORHOOD MAP PROJECT (Museums and Galleries)
 
 ## Summary
 The Neighborhood Map Project (NMP) is an app to help you identify local art galleries and museums using the Google Maps API and Google Places. It allows users to search within a specific geographical area and filter down a list of results by name.
